@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
   <head>
-    <title>App Name: A Coding Project By Nate Canterbury</title>
+    <title>TACO CAT: A Coding Project By Nate Canterbury</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -17,6 +17,8 @@
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
       crossorigin="anonymous"
     />
+
+    <link rel="stylesheet" href="https://use.typekit.net/nfp3cxz.css">
 
     <script
       src="https://kit.fontawesome.com/5db21ba9c6.js"
@@ -39,8 +41,9 @@
             width="40"
             height="35"
           />
-          APP NAME</a
+        </a
         >
+        <a class="navbar-brand logoFont">TACO CAT</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -64,10 +67,10 @@
               <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" target="_blank" href="#">Git Repo</a>
+              <a class="nav-link" target="_blank" href="https://github.com/Nateclsu/TacoCat">Git Repo</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" target="_blank" href="#">About</a>
+              <a class="nav-link" target="_blank" href="https://natecanterbury-portfolio.netlify.app/">About</a>
             </li>
           </ul>
         </div>
@@ -80,17 +83,61 @@
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                        //Call Hello World
-                        function helloWorld() {
-                            alert("Hello World!");
-                        }
+                      //Controller Function
+                      //Get string data from the page
+                      function getString() {
+                      
+                          document.getElementById("alert").classList.add("invisible");
+                      
+                          let userString = document.getElementById("userString").value; 
+                      
+                          let returnObj = palindrome(userString);
+                      
+                          displayResults(returnObj);
+                      }
+                      
+                      //Logic Function
+                      //Identify if the string is a palindrome
+                      function palindrome(userString){
+                      
+                          let returnObj = {};
+                          //make string lowercase and remove whitespace, special characters
+                          userString = userString.toLowerCase();
+                          let regex = /[^a-z0-9]/gi;
+                          userString = userString.replace(regex,"");
+                      
+                          //reverse the string
+                          let revString = [];
+                          for(let i = userString.length-1; i >= 0; i--){
+                              revString += userString[i];
+                          }
+                      
+                          //check if the string is same forward and backward
+                          if(revString == userString) {
+                              returnObj.msg = "Yes!  You entered a palindrome"
+                          } else {
+                              returnObj.msg = "Nope! you did not enter a palindrome"
+                          }
+                      
+                          returnObj.reversed = revString;
+                      
+                          return returnObj;
+                      }
+                      
+                      //Display Function
+                      //Display the output on the screen
+                      function displayResults(returnObj) {
+                          //turn on alert box
+                          document.getElementById("alert").classList.remove("invisible");
+                      
+                          document.getElementById("alertHeader").innerHTML = returnObj.msg;
+                          document.getElementById("msg").innerHTML = `Your phrase reversed is: ${returnObj.reversed} `;
+                      }
                     </code>
                     </pre>
                 </div>
                 <div class="col-lg-4">
-                    <p>The Code is structured in one function.</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a message of "Hello World."</p>
+                    <!-- Insert Description -->
                 </div>
             </div>
         </div>
@@ -122,12 +169,12 @@
             >
               <div class="row">
                 <div class="col social">
-                  <a href="#" target="_blank"
+                  <a href="https://www.linkedin.com/in/nate-canterbury-92004922a/" target="_blank"
                     ><i class="fab fa-linkedin fa-2x" style="color: #3c5291"></i
                   ></a>
                 </div>
                 <div class="col social">
-                  <a href="#" target="_blank"
+                  <a href="https://github.com/Nateclsu" target="_blank"
                     ><i class="fab fa-github fa-2x" style="color: #3c5291"></i
                   ></a>
                 </div>

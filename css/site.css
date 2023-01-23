@@ -1,6 +1,6 @@
 :root {
     --primary-color: #3c5291;
-    --secondary-color: #d9d9d9;
+    --secondary-color: #FFAB28;
     --dark-color: #292929;
     --white-color: #d9d9d9;
 }
@@ -53,6 +53,12 @@ main>.container {
     color: #8c0cc7;
 }
 
+.logoFont {
+    font-family: colt,serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
 .jsicon {
     color: #F0DB4F;
 }
@@ -70,4 +76,25 @@ code[class*="language-"],
 
 .css3icon {
     color: #264de4;
+}
+
+.checklist {
+    color: var(--secondary-color);
+}
+
+.btnCustom:hover{
+    background-color: var(--dark-color);
+    color: white;
+}
+
+.btnCustom{
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.sticky-nav {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
