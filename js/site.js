@@ -29,9 +29,9 @@ function palindrome(userString){
 
     //check if the string is same forward and backward
     if(revString == userString) {
-        returnObj.msg = "Yes!  You entered a palindrome"
+        returnObj.msg = "Congrats! You entered a palindrome"
     } else {
-        returnObj.msg = "Nope! you did not enter a palindrome"
+        returnObj.msg = "Not a palindrome! The word entered was not a palindrome."
     }
 
     returnObj.reversed = revString;
